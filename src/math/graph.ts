@@ -30,6 +30,7 @@ export class Graph {
     const index = this.points.findIndex((p) => p.equals(point));
     if (index !== -1) {
       this.points.splice(index, 1);
+      this.segments = this.segments.filter((s) => !s.includes(point));
       return point;
     }
     return null;
